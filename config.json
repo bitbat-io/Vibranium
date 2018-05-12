@@ -1,0 +1,224 @@
+{
+    "name": "DocumentTransferContract",
+    "source": "./smart_contracts/smart_contract.sol",
+    "verify_method_name": "verify",
+    "abi": [
+        {
+            "constant": true,
+            "inputs": [
+                {
+                    "name": "_hash",
+                    "type": "uint256"
+                }
+            ],
+            "name": "GetDocumentUserAddress",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "constant": true,
+            "inputs": [
+                {
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Documents",
+            "outputs": [
+                {
+                    "name": "issuerAddress",
+                    "type": "address"
+                },
+                {
+                    "name": "userAddress",
+                    "type": "address"
+                },
+                {
+                    "name": "documentHash",
+                    "type": "uint256"
+                },
+                {
+                    "name": "timestamp",
+                    "type": "uint256"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "constant": true,
+            "inputs": [
+                {
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "AccessRequests",
+            "outputs": [
+                {
+                    "name": "requesterAddress",
+                    "type": "address"
+                },
+                {
+                    "name": "documentHash",
+                    "type": "uint256"
+                },
+                {
+                    "name": "accepted",
+                    "type": "bool"
+                },
+                {
+                    "name": "denied",
+                    "type": "bool"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "_index",
+                    "type": "uint256"
+                }
+            ],
+            "name": "AcceptRequest",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "_userAddress",
+                    "type": "address"
+                },
+                {
+                    "name": "_requesterAddress",
+                    "type": "address"
+                },
+                {
+                    "name": "_hash",
+                    "type": "uint256"
+                },
+                {
+                    "name": "_accept",
+                    "type": "bool"
+                }
+            ],
+            "name": "AccessRequestUpdate",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "_requester",
+                    "type": "address"
+                },
+                {
+                    "name": "_hash",
+                    "type": "uint256"
+                }
+            ],
+            "name": "AddAccessRequest",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "_index",
+                    "type": "uint256"
+                }
+            ],
+            "name": "DeniedRequest",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "_userAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "GetUserDocuments",
+            "outputs": [
+                {
+                    "components": [
+                        {
+                            "name": "issuerAddress",
+                            "type": "address"
+                        },
+                        {
+                            "name": "userAddress",
+                            "type": "address"
+                        },
+                        {
+                            "name": "documentHash",
+                            "type": "uint256"
+                        },
+                        {
+                            "name": "timestamp",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "",
+                    "type": "tuple[]"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "_issuerAddress",
+                    "type": "address"
+                },
+                {
+                    "name": "_userAddress",
+                    "type": "address"
+                },
+                {
+                    "name": "_documentHash",
+                    "type": "uint256"
+                }
+            ],
+            "name": "PushNewDocument",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        }
+    ]
+}
